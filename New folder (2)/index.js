@@ -1,8 +1,8 @@
 const socialLinks = [
-    { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/ishraejustudentschapter", color: "#1877f2" },
-    { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/ishrae_ju", color: "#e4405f" },
+    { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/ishraeju", color: "#1877f2" },
+    { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/ishrae_jadavpuruniversity", color: "#e4405f" },
     { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/company/ishrae-jadavpur-university/posts/?feedView=all", color: "#0077b5" },
-    { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/channel/UCxxxxxxxx", color: "#ff0000" },
+    { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/@ishraejadavpuruniversityst6204", color: "#ff0000" },
     { name: "WhatsApp", icon: "message-circle", url: "https://wa.me/1234567890", color: "#25D366" },
 ];
 
