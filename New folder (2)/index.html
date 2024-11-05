@@ -5,139 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISHRAE JU Students Chapter - Social Links</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #1a1a2e;
+            --card-bg: #16213e;
+            --text-color: #e94560;
+            --text-secondary: #0f3460;
+        }
+
         body {
-    font-family: Arial, sans-serif;
-    background-color: #1f2937;
-    color: #f3f4f6;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.container {
-    max-width: 1000px;
-    padding: 2rem;
-}
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+        }
 
-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-header p {
-    color: #9ca3af;
-    font-size: 1.25rem;
-}
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
 
-.social-links {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+        .social-links {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
 
-.social-card {
-    background-color: #374151;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: box-shadow 0.3s ease;
-}
+        .social-card {
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
 
-.social-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.icon-wrapper {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1rem;
-}
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
 
-.icon-wrapper svg {
-    width: 24px;
-    height: 24px;
-    color: white;
-}
+        .social-card:hover::before {
+            opacity: 1;
+        }
 
-.social-info h2 {
-    margin: 0;
-    font-size: 1.125rem;
-}
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1.5rem;
+            transition: transform 0.3s ease;
+        }
 
-.social-info p {
-    margin: 0.25rem 0 0;
-    font-size: 0.875rem;
-    color: #9ca3af;
-}
+        .social-card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .icon-wrapper svg {
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+
+        .social-info h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .social-info p {
+            margin: 0.25rem 0 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="dark-mode">
+<body>
     <div class="container">
         <header>
-            <h1>ISHRAE JU Students Chapter</h1>
+            <h1>ISHRAE JU</h1>
             <p>Connect with us on social media!</p>
         </header>
         <div class="social-links" id="socialLinks">
             <!-- Social link cards will be inserted here by JavaScript -->
         </div>
     </div>
-    <script >
+    <script>
+        const socialLinks = [
+            { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/ishraeju", color: "#1877f2" },
+            { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/ishrae_jadavpuruniversity", color: "#e4405f" },
+            { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/company/ishrae-jadavpur-university/posts/?feedView=all", color: "#0077b5" },
+            { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/@ishraejadavpuruniversityst6204", color: "#ff0000" },
+            { name: "WhatsApp", icon: "message-circle", url: " https://chat.whatsapp.com/Hl0NJuou7ZHBxjtJHC2amd ", color: "#25D366" },
+        ];
 
-const socialLinks = [
-    { name: "Facebook", icon: "facebook", url: "https://www.facebook.com/ishraeju", color: "#1877f2" },
-    { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/ishrae_jadavpuruniversity", color: "#e4405f" },
-    { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/company/ishrae-jadavpur-university/posts/?feedView=all", color: "#0077b5" },
-    { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/@ishraejadavpuruniversityst6204", color: "#ff0000" },
-    { name: "WhatsApp", icon: "message-circle", url: "https://wa.me/1234567890", color: "#25D366" },
-];
+        function createSocialCard(link) {
+            const card = document.createElement('a');
+            card.href = link.url;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.className = "social-card";
 
-function createSocialCard(link) {
-    const card = document.createElement('a');
-    card.href = link.url;
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-    card.className = "social-card";
+            card.innerHTML = `
+                <div class="icon-wrapper" style="background-color: ${link.color};">
+                    <i data-lucide="${link.icon}"></i>
+                </div>
+                <div class="social-info">
+                    <h2>${link.name}</h2>
+                    <p>Join us on ${link.name}</p>
+                </div>
+            `;
 
-    card.innerHTML = `
-        <div class="icon-wrapper" style="background-color: ${link.color};">
-            <i data-lucide="${link.icon}"></i>
-        </div>
-        <div class="social-info">
-            <h2>${link.name}</h2>
-            <p>Join us on ${link.name}</p>
-        </div>
-    `;
+            return card;
+        }
 
-    return card;
-}
+        function renderSocialLinks() {
+            const container = document.getElementById('socialLinks');
+            socialLinks.forEach(link => {
+                const card = createSocialCard(link);
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
 
-function renderSocialLinks() {
-    const container = document.getElementById('socialLinks');
-    socialLinks.forEach(link => {
-        const card = createSocialCard(link);
-        container.appendChild(card);
-    });
-    lucide.createIcons();
-}
-
-document.addEventListener('DOMContentLoaded', renderSocialLinks);
+        document.addEventListener('DOMContentLoaded', renderSocialLinks);
     </script>
 </body>
 </html>
