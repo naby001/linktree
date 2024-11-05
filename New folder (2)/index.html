@@ -12,11 +12,18 @@
             --card-bg: #16213e;
             --text-color: #e94560;
             --text-secondary: #d2d8df;
+            --highlight-bg: rgba(233, 69, 96, 0.1);
+        }
+        h2{
+            -webkit-text-fill-color: rgb(231, 255, 18);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
+            background-image: url("back.png");
             background-color: var(--bg-color);
+            background-size: cover;
+            background-position: center;
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -48,6 +55,9 @@
             color: var(--text-secondary);
             font-size: 1.25rem;
             font-weight: 300;
+            background-color: var(--highlight-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
 
         .social-links {
@@ -123,14 +133,37 @@
             font-size: 0.875rem;
             color: var(--text-secondary);
         }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+            z-index: 1;
+            position: relative;
+        }
+       
     </style>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <video autoplay muted loop class="background-video">
+        <source src="loop.mp4" type="video/mp4">
+        <!-- Fallback content in case the video doesn't load -->
+        Your browser does not support HTML5 video.
+    </video>
     <div class="container">
         <header>
             <h1>ISHRAE JU</h1>
-            <p>Connect with us on social media!</p>
+            <h2>Connect with us on social media!</h2>
         </header>
         <div class="social-links" id="socialLinks">
             <!-- Social link cards will be inserted here by JavaScript -->
